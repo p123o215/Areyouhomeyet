@@ -13,7 +13,7 @@ void updateFrame(void) {
 
 	char buffer[20] = {0};
 
-	snprintf(buffer, sizeof(buffer), "%d", 22 - timeInfo->tm_mday);
+	snprintf(buffer, sizeof(buffer), "%d Days Remain!", 22 - timeInfo->tm_mday);
 
 	BeginDrawing();
 		ClearBackground(RAYWHITE);
