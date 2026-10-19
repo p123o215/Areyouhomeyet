@@ -18,7 +18,7 @@ void updateFrame(void) {
 	BeginDrawing();
 		ClearBackground(RAYWHITE);
 
-		DrawText(buffer, 190, 200, 20, LIGHTGRAY);
+		DrawText(buffer, 320, 185, 80, LIGHTGRAY);
 	EndDrawing();
 }
 
