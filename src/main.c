@@ -24,7 +24,10 @@ void updateFrame(void) {
 
 
 int main(void) {
-	InitWindow(GetScreenWidth(), GetScreenHeight(), "Home Bound");
+	int width = GetScreenWidth();
+	int height = GetScreenHeight();
+
+	InitWindow(width, height, "Home Bound");
 
 	emscripten_set_main_loop(updateFrame, 60, 1);
 
