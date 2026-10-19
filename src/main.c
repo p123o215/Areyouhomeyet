@@ -15,10 +15,12 @@ void updateFrame(void) {
 
 	snprintf(buffer, sizeof(buffer), "%d Days Remain!", 22 - timeInfo->tm_mday);
 
+	Vector2 dateSize = MeasureTextEx(GetFontDefault(), buffer, 80, 1.5);
+
 	BeginDrawing();
 		ClearBackground(RAYWHITE);
 
-		DrawText(buffer, GetScreenWidth()/2, GetScreenHeight()/2, 80, LIGHTGRAY);
+		DrawText(buffer, (GetScreenWidth()/2) - dateSize.x/2, (GetScreenHeight()/2) - dateSize.y/2, 80, LIGHTGRAY);
 	EndDrawing();
 }
 
