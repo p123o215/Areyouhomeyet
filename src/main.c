@@ -18,13 +18,13 @@ void updateFrame(void) {
 	BeginDrawing();
 		ClearBackground(RAYWHITE);
 
-		DrawText(buffer, 320, 185, 80, LIGHTGRAY);
+		DrawText(buffer, GetScreenWidth()/2, GetScreenHeight()/2, 80, LIGHTGRAY);
 	EndDrawing();
 }
 
 
 int main(void) {
-	InitWindow(800, 450, "Home Bound");
+	InitWindow(GetScreenWidth(), GetScreenHeight(), "Home Bound");
 
 	emscripten_set_main_loop(updateFrame, 60, 1);
 
