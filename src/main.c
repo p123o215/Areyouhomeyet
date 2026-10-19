@@ -4,8 +4,6 @@
 #include <stdio.h>
 #include <time.h>
 
-static int date = 22;
-
 void updateFrame(void) {
 	time_t rawTime;
 
@@ -13,9 +11,9 @@ void updateFrame(void) {
 
 	struct tm *timeInfo = localtime(&rawTime);
 
-	char buffer[20];
+	char buffer[20] = {0};
 
-	snprintf(buffer, sizeof(buffer), "%d", timeInfo->tm_mday - date);
+	snprintf(buffer, sizeof(buffer), "%d", timeInfo->tm_mday - 22);
 
 	BeginDrawing();
 		ClearBackground(RAYWHITE);
