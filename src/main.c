@@ -24,12 +24,11 @@ void updateFrame(void) {
 
 
 int main(void) {
-	int width = GetScreenWidth();
-	int height = GetScreenHeight();
+	SetConfigFlags(FLAG_WINDOW_RESIZABLE);
 
-	InitWindow(width, height, "Home Bound");
+	InitWindow(800, 450, "Home Bound");
 
-	emscripten_set_main_loop(updateFrame, 60, 1);
+	emscripten_set_main_loop(updateFrame, 75, 1);
 
 	CloseWindow();
 
