@@ -1,10 +1,26 @@
 #include "/home/razor/Documents/raylib1/raylib/src/raylib.h"
 #include "/home/razor/Documents/emsdk/upstream/emscripten/cache/sysroot/include/emscripten/emscripten.h"
 
+#include <stdio.h>
+#include <time.h>
+
+static int date = 22;
+
 void updateFrame(void) {
+	time_t rawTime;
+
+	time(&rawTime);
+
+	struct tm *timeInfo = localtime(&rawTime);
+
+	char buffer[20];
+
+	snprintf(buffer, sizeof(buffer), "%d", timeInfo->tm_mday - date);
+
 	BeginDrawing();
 		ClearBackground(RAYWHITE);
-		DrawText("Hello, World!", 190, 200, 20, LIGHTGRAY);
+
+		DrawText(buffer, 190, 200, 20, LIGHTGRAY);
 	EndDrawing();
 }
 
