@@ -58,10 +58,19 @@ void updateFrame(void) {
 
 		y = 0;
 
-		for (int i = 0; i < 100; i+=2) {
+		for (int i = 0; i < 100; i++) {
 			confArray[i].x = GetRandomValue(1, GetScreenWidth());
-			confArray[i].y = GetRandomValue(1, GetScreenHeight());
-			confArray[i].color = BLUE;
+			confArray[i].y = GetRandomValue(-250, GetScreenHeight());
+
+			int value = GetRandomValue(1, 3);
+
+			if (value == 1) {
+				confArray[i].color = BLUE;
+			} else if (value == 2) {
+				confArray[i].color = RED;
+			} else {
+				confArray[i].color = PURPLE;
+			}
 		}
 	}
 
