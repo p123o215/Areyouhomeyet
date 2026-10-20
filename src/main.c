@@ -94,7 +94,7 @@ void updateFrame(void) {
 
 		if (newDay || animation) {
 			for (int confettiPiece = 0; confettiPiece < 100; confettiPiece++) {
-				if (y <= GetScreenHeight()) {
+				if (y <= GetScreenHeight()+250) {
 					DrawRectangle(confArray[confettiPiece].x, confArray[confettiPiece].y, 10, 5, confArray[confettiPiece].color);
 				} else {
 					animation = false;
